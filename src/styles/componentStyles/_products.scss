@@ -1,0 +1,140 @@
+@use "../variables" as *;
+@use "../mixins.scss";
+
+.products {
+  &__container {
+    padding-bottom: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    justify-content: center;
+    gap: 3rem;
+
+    .product__card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+      width: 18rem;
+      height: 14rem;
+      margin: 0 auto;
+      color: $textColor;
+      padding: 1rem 1rem 1rem 0;
+      transition: all 0.1s ease;
+      box-shadow: $boxSh;
+      border-radius: $radius;
+
+      &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 5%;
+        background: rgba(29, 151, 108, 0.1);
+        clip-path: polygon(15% 0%, 100% 10%, 80% 90%, 10% 61%);
+        z-index: -99;
+      }
+
+      & p {
+        font-size: $fontSm;
+        font-weight: $weightLg;
+      }
+
+      &-left {
+        position: absolute;
+        top: 14%;
+        left: -5%;
+        height: 70%;
+        padding: 0 0.7rem;
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.7rem;
+        text-align: center;
+        background-color: $whiteColor;
+        box-shadow: $boxSh;
+        border-radius: $radius;
+
+        .product__card-image {
+          margin: 0 auto;
+        }
+
+        .product__img {
+          display: block;
+          width: 80px;
+          filter: drop-shadow(0 12px 8px rgba(0, 0, 0, 0.2));
+          transition: transform 0.3s ease-in-out;
+          cursor: pointer;
+
+          &.image-clicked {
+            transform: scale(1.7);
+          }
+        }
+      }
+
+      &-right {
+        text-align: center;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.4rem;
+
+        & p {
+          font-size: $fontSm;
+          color: $textColor;
+        }
+      }
+    }
+  }
+
+  .products__pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    transition: all 1s ease;
+    margin-top: $mb-1;
+
+    .page__nav-btn {
+      padding: 0.5rem 1rem;
+      background-color: $cardColor;
+      color: $textColor;
+      border-radius: $radius;
+      box-shadow: $boxSh;
+    }
+
+    .page__num-btn {
+      padding: 0.5rem;
+      border-radius: 5px;
+      box-shadow: $boxSh;
+
+      &.page__num-active {
+        background-color: $mainGreen;
+        color: $whiteColor;
+      }
+      &.page__num-disabled {
+        display: none;
+      }
+    }
+  }
+}
+
+.product__price {
+  display: flex;
+  gap: 0.4rem;
+
+  & select {
+    height: 1.8rem;
+    margin: 0.5rem 0;
+    outline: none;
+    border: none;
+    color: $whiteColor;
+    font-weight: $weightLg;
+    box-shadow: $boxSh;
+    border-radius: 5px;
+    background-color: $starColor;
+  }
+}

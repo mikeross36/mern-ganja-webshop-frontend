@@ -1,0 +1,90 @@
+@use "../variables.scss" as *;
+@use "../mixins.scss";
+
+.review {
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+
+  .review__title {
+    color: $textColorLight;
+    line-height: 2;
+    text-align: left;
+    text-transform: uppercase;
+
+    & img {
+      margin-bottom: 0.5rem;
+    }
+
+    & button {
+      text-decoration: underline;
+      color: $mainGreen;
+      background: transparent;
+    }
+  }
+
+  .review__form-container {
+    padding: 1rem;
+    width: 70vw;
+    box-shadow: $boxSh;
+    background: $whiteColor;
+
+    @include mixins.breakpoint-up(medium) {
+      width: 50vw;
+    }
+
+    .review__form {
+      margin: 0 auto;
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      row-gap: 1rem;
+
+      @include mixins.breakpoint-up(medium) {
+        row-gap: 1rem;
+      }
+
+      .form__control {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 1rem;
+
+        .form__label {
+          display: block;
+          font-size: $fontMd;
+          font-weight: $weightMd;
+          text-transform: capitalize;
+          margin-bottom: $mb-0-5;
+        }
+
+        .form__input {
+          margin: 0 auto;
+          font-family: inherit;
+          font-size: $fontSm;
+          color: $textColor;
+          width: 95%;
+          border: 1px solid $lightColor;
+          transition: all 0.3s;
+          border-radius: 4px;
+          background-color: $whiteColor;
+          padding: 0.1rem 0.3rem;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        .review__rating-title {
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+}

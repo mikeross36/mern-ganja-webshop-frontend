@@ -1,0 +1,25 @@
+@use "../variables.scss" as *;
+@use "../mixins.scss";
+
+.rating__stars {
+  width: fit-content;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  .rating__star {
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+  .active {
+    fill: "#FFBA5A";
+  }
+  .inactive {
+    fill: "#a9a9a9";
+  }
+}
