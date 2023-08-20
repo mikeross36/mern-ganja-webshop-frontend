@@ -13,7 +13,6 @@ export const getAllGanjasAction = () => async (dispatch) => {
     };
     const { data } = await api.get("/api/v1/ganjas", config);
     if (data) dispatch({ type: "GET_ALL_GANJAS_SUCCESS", payload: data });
-    console.log(data);
   } catch (err) {
     dispatch({
       type: "GET_ALL_GANJAS_FAILED",

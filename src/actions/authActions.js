@@ -47,7 +47,6 @@ export const loginUserAction = (email, password) => async (dispatch) => {
     if (data.status === "success") {
       toast.success("You logged in successfully!", { toastId: authId });
     }
-    console.log(data);
   } catch (err) {
     dispatch({
       type: "LOGIN_USER_FAILED",
