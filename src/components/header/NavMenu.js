@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaTimesCircle } from "react-icons/fa";
 import { useCurrentUser } from "../../hooks/useCurrentUser";
 import { useSelector, useDispatch } from "react-redux";
@@ -34,36 +34,36 @@ const NavMenu = ({
           <FaTimesCircle size={30} color="#fff" />
         </div>
         <li className="nav__item">
-          <NavLink to="/" className="nav__link">
+          <Link to="/" className="nav__link">
             home
-          </NavLink>
+          </Link>
         </li>
         <li className="nav__item">
-          <NavLink to="/products" className="nav__link">
+          <Link to="/products" className="nav__link">
             products
-          </NavLink>
+          </Link>
         </li>
         <li
           className="nav__item"
           onClick={() => dispatch(getAllCategoriesAction())}
         >
-          <NavLink to="/categories" className="nav__link">
+          <Link to="/categories" className="nav__link">
             categories
-          </NavLink>
+          </Link>
         </li>
         <li className="nav__item" onClick={() => setIsCartOpen(true)}>
-          <NavLink to="#" className="nav__link">
+          <Link to="#" className="nav__link">
             cart
-          </NavLink>
+          </Link>
           {cartItems.length > 0 && (
             <span className="cart__items-total">{itemsTotal}</span>
           )}
         </li>
         {!currentUser ? (
           <li className="nav__item" onClick={() => setShowModal1(true)}>
-            <NavLink to="#" className="nav__link">
+            <Link to="#" className="nav__link">
               login
-            </NavLink>
+            </Link>
           </li>
         ) : (
           <li className="nav__item" onClick={(e) => e.stopPropagation()}>
