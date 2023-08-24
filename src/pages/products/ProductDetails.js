@@ -13,6 +13,13 @@ import AddReview from "../../components/AddReview";
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
+const formatDate = (date) =>
+  new Intl.DateTimeFormat("en", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(new Date(date));
+
 const ProductDetails = ({ setShowModal1, setIsCartOpen }) => {
   const ganja = useGanjaDetails();
 
@@ -69,7 +76,7 @@ const ProductDetails = ({ setShowModal1, setIsCartOpen }) => {
           style={{ width: "50px" }}
         />
         <p>category: {category}</p>
-        <p>tested: {dateTested}</p>
+        <p>tested: {formatDate(dateTested)}</p>
         <p>thca: {thca}</p>
         <p>thc: {thc}</p>
         <p>cbda: {cbda}</p>

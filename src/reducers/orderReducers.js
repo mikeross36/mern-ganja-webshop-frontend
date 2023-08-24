@@ -1,7 +1,7 @@
 export const createOrderReducer = (state = {}, action) => {
   switch (action.type) {
     case "CREATE_ORDER_REQUEST":
-      return { loading: false };
+      return { loading: true };
     case "CREATE_ORDER_SUCCESS":
       return { loading: false, success: true };
     case "CREATE_ORDER_FAILED":
