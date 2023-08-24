@@ -81,11 +81,11 @@
         @include mixins.breakpoint-up(medium) {
           font-size: $fontMd;
           margin-left: $mb-1;
+        }
 
-          &:hover {
-            text-decoration: underline;
-            text-underline-offset: 5px;
-          }
+        &.active {
+          background-color: $whiteColor;
+          color: $mainDark;
         }
       }
 
